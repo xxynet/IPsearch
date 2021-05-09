@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP查询</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <input type="text" id="ip">
+    <button id="search">查询</button>
+
+    <p id="sip"></p>
+    <p id="cip"></p>
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $("#search").click(
+                // $("#sip").text(GetIPInfo(ip))
+                function()
+                {
+                    $("#sip").text("查询中……")
+                    $("#cip").text("");
+                    var ip = $("#ip").val();
+                    $.getJSON("https://api.xsot.cn/ip/?ip="+ip,function(data,status)
+                    {
+                        $("#sip").text(ip)
+                        $("#cip").text(data.addr);
+                    })
+                }
+            )
+        }
+        )
+    </script>
+</body>
+</html>
