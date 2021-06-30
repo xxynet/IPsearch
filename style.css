@@ -1,0 +1,29 @@
+body
+{
+    text-align: center;
+}
+
+input
+{
+    background: #ffffff;
+    border: 1px solid #d7d9e0;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333333;
+    box-sizing: border-box;
+    width: 464px;
+    height: 30px;
+    padding: 0 6px;
+    outline: none;
+}
+
+input:hover
+{
+    border: 1px solid #b3b3b3;
+}
+
+button
+{
+    outline: none;
+
+}
