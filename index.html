@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="main.js"></script>
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
@@ -24,10 +25,12 @@
     <script>
         $(document).ready(function(){
             $("#search").click(function(){
-                // $("#sip").text(GetIPInfo(ip))
                     $("#sip").text("查询中……")
                     $("#cip").text("");
-                    var ip = $("#ip").val();
+                    // var ip = $("#ip").val();
+                    // var cip = SearchIP(ip);
+                    // $("#sip").text(ip);
+                    // $("#cip").text(cip);
                     $.getJSON("https://api.xsot.cn/ip/?ip="+ip,function(data,status){
                         $("#sip").text(ip)
                         $("#cip").text(data.addr);
